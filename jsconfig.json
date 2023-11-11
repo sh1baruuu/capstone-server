@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "es5",
+        "baseUrl": "./",
+    },
+    "exclude": ["node_modules"],
+    "include": ["src/**/*.js", "src/rooms/index"]
+}
