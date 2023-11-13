@@ -37,6 +37,7 @@ const removeUserFromRoom = (peerId) => {
 };
 
 const roomHandler = (socket) => {
+  
   const startMatch = ({ peerId, interest }) => {
     if (!rooms[interest]) {
       rooms[interest] = [];
@@ -73,9 +74,10 @@ const roomHandler = (socket) => {
     console.log(JSON.stringify(rooms, null, 2));
   };
 
-  const endCall = async (peerId) => {
-    const roomId = await removeUserFromRoom(peerId);
+  const endCall = async (meId) => {
+    const roomId = await removeUserFromRoom(meId);
     socket.leave(roomId);
+    console.log("leave")
   };
 
   socket.on("end-call", endCall);
